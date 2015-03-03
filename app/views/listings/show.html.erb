@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-6">
+  	<div class="thumbnail">
+      <%= image_tag @listing.image.url %>
+    </div>
+  </div>
+  <div class="col-md-6">
+      <%= raw MagickTitle.say(@listing.name,:h1).to_html("div") %>
+      <%= raw MagickTitle.say(@listing.description,:sidebar).to_html("div") %>
+  		<h3><%= @listing.name %></h3>
+  		<p><%= number_to_currency(@listing.price) %></p>
+  		<p><%= @listing.description %></p>
+  </div>
+</div>
+
+
+<% MagickTitle.style :h1 do
+  font_size   50
+  line_height -20
+end
+
+MagickTitle.style :sidebar do
+  font      "Lobster.ttf"
+  font_size 30
+  color     "#cc0000"
+  background_color '#00ff00'
+  width 250
+  to_html   :parent => { :tag => "h1" }
+end
+%>
+
+
+
+<%= link_to 'Edit', edit_listing_path(@listing) ,class: "btn btn-link"%> |
+<%= link_to 'Back', listings_path,class: "btn btn-link" %>
