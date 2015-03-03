@@ -1,5 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<% MagickTitle.style :h1 do
+  font_size   50
+  line_height -20
+end
+
+MagickTitle.style :sidebar do
+  font      "Lobster.ttf"
+  font_size 30
+  color     "#cc0000"
+  background_color '#00ff00'
+  width 250
+  to_html   :parent => { :tag => "h1" }
+end
+%>
+
 <div class="row">
   <div class="col-md-6">
   	<div class="thumbnail">
@@ -16,20 +31,7 @@
 </div>
 
 
-<% MagickTitle.style :h1 do
-  font_size   50
-  line_height -20
-end
 
-MagickTitle.style :sidebar do
-  font      "Lobster.ttf"
-  font_size 30
-  color     "#cc0000"
-  background_color '#00ff00'
-  width 250
-  to_html   :parent => { :tag => "h1" }
-end
-%>
 
 
 
