@@ -27,6 +27,7 @@ gem "paperclip", github: 'thoughtbot/paperclip'
 gem "figaro"
 gem 'devise'
 gem 'magick_title', '>= 0.2.0' 
+gem "paperclip-dropbox", ">= 1.1.7"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
