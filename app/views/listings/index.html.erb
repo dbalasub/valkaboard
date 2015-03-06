@@ -1,19 +1,15 @@
-<p id="notice"><%= notice %></p>
+
 <div class="center">
   <div class="row">
     <% @listings.each do |listing| %>
      <div class="col-md-3">
 
       <div class="thumbnail">
-        <%= image_tag listing.image.url %>
+        <%= link_to " #{image_tag listing.image.url } ".html_safe, listing, class: "btn btn-link"%>
         <div class="caption">
           <h3><%= listing.name %><br></h3>
           <p> <%= number_to_currency(listing.price )%><br></p>
           <p><%= "Sold by #{listing.user.name }" %></p>
-          <%= link_to 'Show', listing ,class: "btn btn-link"%>
-          <%= link_to 'Edit', edit_listing_path(listing) ,class: "btn btn-link"%>
-          <%= link_to 'Destroy', listing, class: "btn btn-link", method: :delete, data: { confirm: 'Are you sure?' } %>
-          
         </div>
       </div>
     </div>
